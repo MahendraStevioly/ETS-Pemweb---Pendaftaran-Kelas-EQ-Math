@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login EQ - Math</h2>
+    <form id="loginForm">
+        <!--Email-->
+        <label>Email:</label><br>
+        <input type="email" id="email"><br><br>
+
+        <!--Password-->
+        <label>Password:</label><br>
+        <input type="password" id="password">
+        <button type="button" onclick="togglePassword()">Show</button><br><br>
+
+        <!--Error-->
+        <p id="errorMsg" style="color:red; display:none;">
+            Email dan Password Wajib Diisi!
+        </p>
+
+        <!--Button-->
+        <button type="submit">Login</button>
+    </form>
+
+    <br>
+
+    <p>Belum punya akun? <a href='register.html'>Daftar</a></p>
+    <p><a href="lupa-password.html">Lupa Password</a></p>
+    
+    <script>
+        const form = document.getElementById("loginForm");
+        const errorMsg = document.getElementById("errorMsg");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault()
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if(email === "" || password === ""){
+                errorMsg.style.display = "block";
+            }else{
+                errorMsg.style.display = "none";
+
+                alert("Login Berhasil")
+
+                //window.location.href = "../index.html"; //ini nanti masuknya ke dashboard
+            }
+        });
+
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+
+            if(passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+
+</body>
+</html>

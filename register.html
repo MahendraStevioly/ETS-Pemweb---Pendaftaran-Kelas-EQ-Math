@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register EQ - Math</h2>
+
+    <form id="registerForm">
+        <!--Nama-->
+        <label>Nama:</label>
+        <input type="text" id="nama"><br><br>
+
+        <!--Email-->
+        <label>Email:</label>
+        <input type="text" id="email"><br><br>
+
+        <!--Password-->
+        <label>Password:</label>
+        <input type="password" id="password">
+        <button type="button" onclick="togglePassword()">Show</button><br><br>
+
+        <!--Konfirmasi Password-->
+        <label>Konfirmasi Password:</label>
+        <input type="password" id="confirmPassword"><br><br>
+
+        <!--Error-->
+        <p id="errorMsg" style="color: red; display: none;"></p>
+
+        <!--Button-->
+        <button type="submit">Daftar</button>
+
+    </form>
+
+    <br>
+
+    <p>Sudah punya akun? <a href="login.html">Login</a></p>
+
+    <script>
+        const form = document.getElementById("registerForm");
+        const errorMsg = document.getElementById("errorMsg");
+
+        form.addEventListener("submit", function(e) {
+             e.preventDefault();
+
+            const nama = document.getElementById("nama").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (nama === "" || email === "" || password === "" || confirmPassword === "") {
+                    errorMsg.innerText = "Semua field wajib diisi!";
+                    errorMsg.style.display = "block";
+                } 
+                else if (password !== confirmPassword) {
+                    errorMsg.innerText = "Password tidak sama!";
+                    errorMsg.style.display = "block";
+                } 
+      else {
+        errorMsg.style.display = "none";
+
+        // Simulasi berhasil daftar
+        alert("Registrasi berhasil");
+
+        // Redirect ke login
+        window.location.href = "login.html";
+      }
+    });
+
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+    }
+  </script>
+</body>
+</html>
