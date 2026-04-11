@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(test -d \"C:\\\\xampp\\\\htdocs\\\\ETS-Pemweb---Pendaftaran-Kelas-EQ-Math\")",
+      "Bash(php -v)",
+      "Bash(dir)"
+    ]
+  }
+}
