@@ -3,7 +3,11 @@
     "allow": [
       "Bash(test -d \"C:\\\\xampp\\\\htdocs\\\\ETS-Pemweb---Pendaftaran-Kelas-EQ-Math\")",
       "Bash(php -v)",
-      "Bash(dir)"
+      "Bash(dir)",
+      "Bash(mysql -u root -D eq_math_db -e \"ALTER TABLE users ADD COLUMN otp_code VARCHAR\\(6\\) NULL COMMENT ''Kode OTP 6 digit'' AFTER no_wa, ADD COLUMN otp_expires_at DATETIME NULL COMMENT ''Waktu kedaluwarsa OTP'' AFTER otp_code, ADD COLUMN otp_created_at DATETIME NULL COMMENT ''Waktu pembuatan OTP'' AFTER otp_expires_at, ADD COLUMN otp_attempts INT DEFAULT 0 COMMENT ''Jumlah percobaan OTP yang salah'' AFTER otp_created_at, ADD COLUMN otp_locked_until DATETIME NULL COMMENT ''Waktu lock sementara'' AFTER otp_attempts;\")",
+      "Bash(php -l \"C:\\\\xampp\\\\htdocs\\\\ETS-Pemweb---Pendaftaran-Kelas-EQ-Math\\\\includes\\\\auth.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\ETS-Pemweb---Pendaftaran-Kelas-EQ-Math\\\\includes\\\\auth.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\ETS-Pemweb---Pendaftaran-Kelas-EQ-Math\\\\api\\\\otp.php\")"
     ]
   }
 }
