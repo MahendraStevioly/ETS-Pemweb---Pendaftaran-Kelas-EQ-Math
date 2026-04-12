@@ -151,7 +151,7 @@
               class="absolute inset-0 bg-blue-600 rounded-3xl transform translate-x-4 translate-y-4 -z-10 opacity-20"
             ></div>
             <img
-              src="./assets/images/about-math.jpg"
+              src="./assets/landing-page-img1.jpeg"
               alt="Belajar Matematika Interaktif"
               class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3] border border-gray-100"
             />
